@@ -42,18 +42,14 @@ function handleEmployeesInsert(employ, monthId){
     const employeesTable = {
             [name]: {
                 id : employ.id,
-                Salario: employ.salary,
-                Vendas: employ.sales[monthId],
-                Comissao: employ.sales[monthId] * 15 /100,
-                Total: employ.salary + employ.sales[monthId] * 15 /100
+                Salario: `R$ ${parseFloat(employ.salary).toFixed(2)}`,
+                Vendas: `R$ ${parseFloat(employ.sales[monthId]).toFixed(2)}`,
+                Comissao: `R$ ${parseFloat(employ.sales[monthId] * 15 /100).toFixed(2)}`,
+                Total: `R$ ${parseFloat(employ.salary + employ.sales[monthId] * 15 /100).toFixed(2)}`
             }
         }
     console.table(employeesTable)
 }
-function handleEmployConsult(employ, monthId){
-
-}
-
 
 function save(content){
     const contentString = JSON.stringify(content);
@@ -66,7 +62,6 @@ function load() {
     return contentJson
 }
 module.exports= {
-    handleEmployConsult,
     handleEmployeesInsert,
     handleEmployeesTable,
     handleFullTable,
