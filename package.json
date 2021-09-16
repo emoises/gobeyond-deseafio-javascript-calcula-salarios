@@ -1,0 +1,14 @@
+{
+  "name": "gobeyond-deseafio-javascript-calcula-salarios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node --trace-warnings app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

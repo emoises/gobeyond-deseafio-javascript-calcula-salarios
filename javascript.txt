@@ -1,0 +1,83 @@
+iniciar banho 1.0
+    -pegar Toalhar
+    -pegar roupa limpa
+    -se (tem tolha e Roupa limpa) ir para o banheiro 
+        -ligar agua
+        -pegar sabonete 
+        - ensaboar
+        - enxugar
+        - lavar cabeça
+        - enxaguar
+        -desligar agua
+        - secar
+        -colocar roupa limpa
+
+    senão "Não tomar banho"
+fim
+
+iniciar banho 1.1
+    -pegar Toalhar
+    -pegar roupa limpa
+    -se (tem tolha e Roupa limpa) ir para o banheiro 
+        -pegar sabonete 
+        - ensaboar
+        - enxugar
+        - lavar cabeça
+        - enxaguar
+        - enxaguar
+        -desligar agua
+        - secar
+        -colocar roupa limpa
+        -se (tem barba ) então pegar gilete e fazer a barba
+    senão "Não tomar banho"
+
+fim
+
+iniciar banho 1.2
+    -pegar Toalhar
+    -pegar roupa limpa
+    -se (tem tolha e Roupa limpa) ir para o banheiro 
+        - tirar roupa
+        -pegar sabonete 
+        - ensaboar
+        - enxugar
+        - lavar cabeça
+        - enxaguar
+        - enxaguar
+        -desligar agua
+        - secar
+        -colocar roupa limpa
+        -se (tem barba ) então pegar gilete e fazer a barba
+    senão "Não tomar banho"
+
+fim
+
+funcao salarioTotal(nome, salario, totalDeVendas) {
+    constante meses = matriz(12)//matriz de tamnho 12
+    para (mes em meses) faça{
+        var valorFinal = salario + valorDeVendas * 15 / 100
+        imprimir(nome,Numero(valorFinal,2))
+    }
+}
+constante funcionarios = matriz(n) // total de funcionarios
+funcao imprimir funcionarios (funcionarios){
+    para  (funcionario em funcionarios){
+        salarioTotal(funcionario.nome, funcionario.salario, funcionario.totalDeVendas)
+    }
+}
+
+iniciar totalPorFuncionario
+    -Para cada MÊs
+        -ler nome
+        -ler salario
+        -ler totalDeVendas
+        -calcular comissaoDe15PorCento
+        -Somar => somaTotal= salario e comissaoDe15PorCento
+        -formatar somaTotal com duas casas deciamais
+        -imprimir nome
+        -imprimir somaTotal
+
+iniciar salariosFuncionario
+    -para cada funcionario
+        -chamar função totalPorFuncionario( nome do funcionario, salario do funcionario, total de vendas)
+        
